@@ -1,0 +1,158 @@
+<html>
+    <head>
+        
+        <title>TodoList</title>
+        <style>
+        
+        body{
+            background-image:linear-gradient(to left,rgba(200, 21, 51, 0.469),rgb(105, 86, 193));
+        }
+        .task{
+            position: relative;
+            border: 2px solid rgb(99, 20, 52);
+           width: 550px;
+           /* height: 300px;*/
+            padding: 30px;
+            border-radius: 30PX;
+            margin: 70px;
+            left: 230px;
+            background-color:rgba(116, 107, 107, 0.337);
+            
+        }
+#taskinfo{
+    width: 400px;
+    height: 40px;
+}
+#taskinfo:focus{
+    border-color: rgb(19, 149, 154);
+    outline: none;
+}
+    
+h1{
+    position: relative;
+    
+    color: rgba(240, 215, 22, 0.794);
+    text-align: center;
+    top: 80px;
+    width: 480px;
+    left: 310px;
+    background-color: rgba(32, 4, 1, 0.451);
+}
+        
+
+/*    #add{
+        position: absolute;
+        bottom: 45px;
+        left: 510px;
+            width: 100px;
+            height: 40px;
+            border-radius: 30px;
+            border: 2px solid pink;
+            color: rgb(53, 53, 107);
+}*/
+        
+  #add{
+    position: relative;
+    left: 80px;
+    border-radius: 20px;
+    width: 80px;
+    height: 60px;
+    color: blue;
+    border: 2px solid palevioletred;
+  }      
+    
+/*#text{
+    position: relative;
+    width: 100px;
+    height: 50px;*/
+
+img{
+    position: relative;
+    left: 760px;
+    top: 150px;
+    
+}
+        </style>
+    </head>
+
+    <body>
+        <H1>To do list</H1>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Notepad_icon.svg/2048px-Notepad_icon.svg.png"width="50px">
+        <div class="task">
+           <div class="taskbar">
+                <input type="text" id="taskinfo" placeholder="write here">
+                <button id="add"><h3>Add+</h3>
+                </div> 
+           <ol id="list" style="color: rgb(17, 17, 19);"><h2></h2></ol>
+        </div>
+        
+        <script>
+          // let todo=document.getElementById("taskinfo");
+            //let toddle=document.getElementById("list");
+
+         let btn1=document.getElementById("add");
+         btn1.addEventListener("click",function(){
+            if(taskinfo.value===""){
+                alert("please enter your task")
+            }
+            else{
+               
+                let unorderd=document.getElementById("list")
+                let lists=document.createElement("li")
+                lists.innerHTML=taskinfo.value;
+               lists.style.textDecoration="none"
+                unorderd.appendChild(lists);
+
+                let btn3=document.createElement("button");
+             btn3.innerText="completed"
+             btn3.style.width="100px"
+             btn3.style.height="30px"
+             btn3.style.borderRadius="20px"
+             btn3.style.position="relative";
+             btn3.style.left="100px"
+             btn3.style.color="green";
+             btn3.style.border=" solid green"
+             lists.appendChild(btn3);
+            
+            btn3.addEventListener("click",function(){
+               lists.style.textDecoration="line-through"
+   }) 
+                let btn2=document.createElement("button");
+                btn2.innerHTML="delete";
+                lists.appendChild(btn2);
+    
+                btn2.style.width="100px"
+                btn2.style.height="30px"
+                 btn2.style.borderRadius="20px";
+                 btn2.style.position="relative";
+                 btn2.style.left="120px"
+                 btn2.style.color="red"
+                 btn2.style.border="solid red"
+                btn2.addEventListener("click",()=>{
+                    lists.remove()
+                })
+         var newone=document.getElementById("taskinfo");
+             newone.value="";
+             
+             
+             
+             
+           
+        
+        
+            
+            
+            
+               
+
+                
+            }
+         })
+
+         
+             
+                
+        
+        </script>
+    </body>
+</html>
